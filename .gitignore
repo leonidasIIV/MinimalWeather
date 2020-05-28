@@ -1,6 +1,7 @@
 @Resources/Settings/_Manifest.txt
 @Resources/Assets/Images/cover.png
 @Resources/Assets/Images/weather/new
+@Resources/local/*
 Settings/ColorPickerPlus/Eyedropper/ZoomBitmap.bmp
 MinimalWeather.code-workspace
 .vscode
