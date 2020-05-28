@@ -1,5 +1,4 @@
 [Variables]
-
 scale=1
 tScale=1
 
