@@ -3,7 +3,7 @@
 ; you change anything in this file, it WILL break things. Proceed at your own risk!
 
 [Variables]
-mgVersion=0.1.0
+mgVersion=0.2.0
 
 ; POSITIONING
 bgOffset=5
@@ -54,6 +54,8 @@ colorBg=15,15,15
 colorBgBorder=#colorBorder#
 colorSubBg=25,25,25
 
+colortransparentBg=255,255,255,1
+
 colorGraphBg=#colorSubBg#
 colorGraphBorder=#colorBorder#
 colorGraphGrid=#colorGraphBorder#
@@ -64,6 +66,7 @@ colorAccent=137,190,250
 colorDisabled=100,100,100
 
 colorBarBg=#colorBorder#
+colorTransparentBarBg=#colortransparentBg#
 
 colorInputBg=#colorSubBg#
 colorInputBorder=#colorBorder#
@@ -123,6 +126,8 @@ gadgetManagerPath=#ROOTCONFIGPATH#Settings\GadgetManager\GadgetManager.ini
 
 styleSheetPath=#@#StyleSheet.inc
 
+currentTemperatureSettingsPath=#@#Settings\CurrentTemperatureSettings.inc
+
 calendarPath=#ROOTCONFIGPATH#Calendar\Calendar.ini
 calendarConfig=MinimalWeather\Calendar
 calendarSettingsPath=#@#Settings\CalendarSettings.inc
@@ -168,6 +173,26 @@ Shape=Rectangle 0,0,[&[#CURRENTSECTION]:W],[&[#CURRENTSECTION]:H],(#cornerRoundn
 Shape2=Rectangle 2,2,([&[#CURRENTSECTION]:W] - 4),([&[#CURRENTSECTION]:H] - 4),(#cornerRoundness# * #scale#) | StrokeWidth 0 | Extend InsetColor
 Shape3=Rectangle 0,0,[&[#CURRENTSECTION]:W],[&[#CURRENTSECTION]:H],(#cornerRoundness# * #scale#) | StrokeWidth 0 | Extend HoverColor
 DynamicVariables=1
+TransformationMatrix=#transformationMatrix#
+
+[StyleTransparentBackground]
+Shape=Rectangle (#bgOffset# * #scale#),(#bgOffset# * #scale#),(#bgWidth# * #scale#),([[#CURRENTSECTION]:H] - ((#bgOffset# * 2) * #scale#)),(#cornerRoundness# * #scale#) | StrokeWidth 0 | Fill Color #colorBgBorder#,((#showBgBorder# = 1) ? 255 : 0) 
+Shape2=Rectangle ((#bgOffset# + #showBgBorder#) * #scale#),((#bgOffset# + #showBgBorder#) * #scale#),((#bgWidth# - (#showBgBorder# * 2)) * #scale#),([[#CURRENTSECTION]:H] - (((#bgOffset# * 2) + (#showBgBorder# * 2)) * #scale#)),(#cornerRoundness# * #scale#) | StrokeWidth 0 | Fill Color #colortransparentBg#
+;BgGradient=90 | #colortransparentBg# ; 0 | #colorSubBg# ; 1
+X=0
+Y=0
+W=((#bgWidth# + (#bgOffset# * 2)) * #scale#)
+H=([MeterBackgroundHeight:Y] * #scale#)
+DynamicVariables=1
+Group=Background
+
+[StyleTransparentBackgroundHeight]
+SolidColor=#colortransparentBg#
+X=0
+Y=(#contentMarginAbs# + #bgOffset# + 1)R
+W=(#bgWidthAbs# * #scale#)
+H=1
+Group=Background
 TransformationMatrix=#transformationMatrix#
 
 ; ------------------------------
