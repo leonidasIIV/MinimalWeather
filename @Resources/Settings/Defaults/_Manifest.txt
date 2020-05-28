@@ -1,0 +1,1 @@
+MinimalWeather\@Resources\Settings\GlobalSettings.inc
