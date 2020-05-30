@@ -39,7 +39,6 @@ fontWeight=500
 inputBoxFontSize=8
 
 ; WIDGET FONT SETTINGS
-wMainFontFace=Segoe UI
 wMainFontSize=36
 wMainFontWeight=500
 wMainStringStyle=Normal
@@ -124,8 +123,12 @@ rainFilePath=#@#Addons\RainFile\RainFile.exe
 globalSettingsPath=#@#Settings\GlobalSettings.inc
 gadgetManagerPath=#ROOTCONFIGPATH#Settings\GadgetManager\GadgetManager.ini
 
+openWeatherMapDataSettingsPath=#@#Settings\OpenWeatherMapData.inc
+
 styleSheetPath=#@#StyleSheet.inc
 
+currentTempMeterPath=#ROOTCONFIGPATH#CurrentTemperature\CurrentTemperature.ini
+currentTempMeterConfig-MinimalWeather\CurrentTemperature
 currentTemperatureSettingsPath=#@#Settings\CurrentTemperatureSettings.inc
 
 calendarPath=#ROOTCONFIGPATH#Calendar\Calendar.ini
@@ -246,6 +249,13 @@ FontFace=#fontFaceCn#
 FontSize=9
 FontWeight=600
 StringCase=Upper
+
+[StyleLargeDataString]
+FontColor=#colorMain#
+FontSize=#wMainFontSize#*#scale#
+FontFace=#fontFace#
+Antialias=#wMainAntiAlias#
+ClipString=#wMainClipString#
 
 ; ------------------------------
 ; BUTTON HOVER LOGIC
