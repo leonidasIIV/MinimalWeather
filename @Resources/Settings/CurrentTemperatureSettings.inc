@@ -1,6 +1,5 @@
 [Variables]
 scale=1
-tScale=1
 
 ; Refresh Rate Values
 weatherUpdateRate=1000
